@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compliance QuickScan — DOCX Webhook</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #0d0d24; color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 24px; }
+    .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(196,0,122,0.25); border-radius: 16px; padding: 48px 40px; max-width: 520px; width: 100%; text-align: center; }
+    .status-dot { width: 12px; height: 12px; background: #28a745; border-radius: 50%; display: inline-block; margin-right: 8px; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    .status-line { display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.7); margin-bottom: 28px; }
+    .logo { height: 56px; width: auto; margin-bottom: 24px; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+    h1 span { color: #c4007a; }
+    .sub { color: rgba(255,255,255,0.55); font-size: 15px; line-height: 1.6; margin-bottom: 32px; }
+    .endpoint { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 14px 18px; text-align: left; margin-bottom: 20px; }
+    .endpoint-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #c4007a; margin-bottom: 6px; }
+    .endpoint-url { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; color: rgba(255,255,255,0.8); word-break: break-all; }
+    .method { display: inline-block; background: rgba(196,0,122,0.2); color: #c4007a; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-right: 6px; }
+    .bands { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 24px; }
+    .band { background: rgba(255,255,255,0.04); border-radius: 8px; padding: 14px 10px; }
+    .band-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-bottom: 6px; }
+    .band-dot.high { background: #dc3545; }
+    .band-dot.mod { background: #f0ad4e; }
+    .band-dot.low { background: #28a745; }
+    .band h3 { font-size: 12px; font-weight: 600; margin-bottom: 2px; }
+    .band p { font-size: 11px; color: rgba(255,255,255,0.4); }
+    .footer { margin-top: 32px; color: rgba(255,255,255,0.25); font-size: 12px; }
+    .footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    .footer a:hover { color: #c4007a; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="https://msgsndr-private.storage.googleapis.com/locationPhotos/4c4c6c24-167d-45e9-96ad-8db015b4eb8d.png" alt="EDGE Mpowerment" class="logo" />
+
+    <div class="status-line">
+      <span class="status-dot"></span>
+      Service Online
+    </div>
+
+    <h1>Compliance <span>QuickScan</span></h1>
+    <p class="sub">DOCX report generation webhook for the Menopause Compliance QuickScan™. Receives quiz scores, generates personalised compliance reports.</p>
+
+    <div class="endpoint">
+      <div class="endpoint-label">API Endpoint</div>
+      <div class="endpoint-url"><span class="method">POST</span>/api/webhook</div>
+    </div>
+
+    <div class="endpoint">
+      <div class="endpoint-label">Expected Payload</div>
+      <div class="endpoint-url" style="font-size:12px; line-height:1.6;">
+        { "Overall Score", "Policy", "Leadership",<br>"Workplace", "Education", "Measurement" }
+      </div>
+    </div>
+
+    <div class="bands">
+      <div class="band">
+        <div class="band-dot high"></div>
+        <h3>High Risk</h3>
+        <p>0 &ndash; 35%</p>
+      </div>
+      <div class="band">
+        <div class="band-dot mod"></div>
+        <h3>At Risk</h3>
+        <p>36 &ndash; 69%</p>
+      </div>
+      <div class="band">
+        <div class="band-dot low"></div>
+        <h3>Low Risk</h3>
+        <p>70 &ndash; 100%</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2026 <a href="https://edgempowerment.co.uk">EDGE Mpowerment</a>
+  </div>
+
+</body>
+</html>
