@@ -4,9 +4,5 @@
     "api/webhook.js": {
       "maxDuration": 30
     }
-  },
-  "routes": [
-    { "src": "/api/webhook", "dest": "/api/webhook.js" },
-    { "src": "/(.*)", "dest": "/public/$1" }
-  ]
+  }
 }
