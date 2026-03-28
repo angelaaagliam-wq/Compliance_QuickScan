@@ -1,0 +1,13 @@
+{
+  "name": "docx-webhook",
+  "version": "1.0.0",
+  "description": "Webhook → DOCX generator for ME Project QuickScan",
+  "main": "api/webhook.js",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "docxtemplater": "^3.51.0",
+    "pizzip": "^3.1.7"
+  }
+}
